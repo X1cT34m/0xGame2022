@@ -1,0 +1,10 @@
+version: "3"
+services:
+  app:
+    image: php:7.4-apache
+    container_name: "tp-phpApache"
+    ports:
+      - 8849:80
+    volumes:
+      - "./www:/var/www/html"
+      - "./flag:/flag"

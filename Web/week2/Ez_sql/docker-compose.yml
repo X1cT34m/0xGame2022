@@ -1,0 +1,46 @@
+version: "3"
+services:
+    nginx:
+        image: nginx:latest
+        container_name: "compose-nginx-sql"
+        restart: always
+        ports:
+            - "8101:80"
+        environment:
+           - TZ=Asia/Shanghai
+        depends_on:
+           - "php"
+        volumes:
+           - "./default.conf:/etc/nginx/conf.d/default.conf"
+           - "./html:/usr/share/nginx/html"
+        networks:
+           - net-app2
+    php:
+        image: php7.4-mysql
+        container_name: "compose-php-sql"
+        restart: always
+        # ports:
+        #     - "9123:9000"
+        environment:
+            - TZ=Asia/Shanghai
+        volumes:
+            - "./html:/usr/share/nginx/html"
+            - "./php.ini:/usr/local/etc/php/php.ini"
+        networks:
+           - net-app2
+    mysql:
+        image: mysql-ctf
+        container_name: "compose-mysql1"
+        restart: always
+        # ports:
+        #     - "3310:3306"
+        # volumes:
+        #     - "./db:/tmp/sql"
+        environment:
+            - MYSQL_ROOT_PASSWORD=0xgame@7747
+        networks:
+           - net-app2
+          
+
+networks:
+    net-app2:

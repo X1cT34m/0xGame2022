@@ -1,0 +1,7 @@
+FROM node	
+COPY ./app2 /app	
+COPY ./flag /usr/local/share/doc/node/flag
+WORKDIR /app	
+RUN npm install	
+EXPOSE 3000	
+CMD ["node","app.js"]

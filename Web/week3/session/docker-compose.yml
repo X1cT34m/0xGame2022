@@ -1,0 +1,7 @@
+version: '3.3'
+services:
+
+  service:
+    image: python37-session
+    ports:
+      - 8278:1337

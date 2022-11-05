@@ -1,0 +1,5 @@
+FROM ctfhub/base_web_nginx_mysql_php_56:latest
+ 
+COPY html /var/www/html
+
+RUN chmod -R 755 /var/www/html/*

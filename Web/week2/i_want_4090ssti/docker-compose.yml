@@ -1,0 +1,7 @@
+version: '3.3'
+services:
+
+  service:
+    image: python37-ssti
+    ports:
+      - 8888:1337

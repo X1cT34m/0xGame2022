@@ -1,0 +1,25 @@
+version: "3"
+services:
+  php:
+    image: php:7.4-fpm
+    container_name: "compose-phptest"
+    volumes:
+      - "./web:/usr/share/httpd/html"
+      - "./php.ini:/usr/local/etc/php/php.ini"
+    networks:
+        - net-app3
+
+  httpd:
+    image: httpd:latest
+    container_name: "apachetest"
+    ports:
+      - 8888:80
+    volumes:
+      - "./web:/usr/share/httpd/html"
+      - "./conf/httpd.conf:/usr/local/apache2/conf/httpd.conf"
+    networks:
+      - net-app3
+
+
+networks:
+    net-app3:
