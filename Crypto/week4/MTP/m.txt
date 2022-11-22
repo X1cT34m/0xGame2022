@@ -1,0 +1,1 @@
+In this meaning, the term cryptosystem is used as shorthand, or as an abbreviation for "cryptographic system". A cryptographic system is any computer system that involves cryptography. Such systems include for instance, a system for secure electronic mail which might include methods for digital signatures, cryptographic hash functions, key management techniques, and so on.

@@ -1,0 +1,1 @@
+flag = b'0xGame{Euler_1s_v3ry|useful!}'

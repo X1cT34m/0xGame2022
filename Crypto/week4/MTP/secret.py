@@ -1,0 +1,1 @@
+flag = b'0xGame{ins3cur3|system}'
